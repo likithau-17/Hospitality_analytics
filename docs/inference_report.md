@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-This report analyses the performance of 10 hotels across five Indian cities over the period 2022–2026.
+This report analyses the performance of 10 hotels across five Indian cities over a five-year period (2022–2026).
 
 The analysis focuses on five key performance indicators (KPIs):
 
@@ -12,121 +12,252 @@ The analysis focuses on five key performance indicators (KPIs):
 - Guest Satisfaction Score
 - Employee Turnover Rate
 
-The data was synthetically generated using Python and Faker, stored in MySQL, and analysed through SQL aggregate tables and a Streamlit dashboard.
+The dataset was synthetically generated using Python, Pandas and Faker, stored in a MySQL database, and analysed using SQL aggregate tables. An interactive Streamlit dashboard was developed to present the results and allow users to explore hotel performance.
+
+The objective of this analysis is to understand hotel performance trends, identify seasonal variations and derive business insights from the generated dataset.
 
 ## 2. Hotel Performance Analysis
 
-### Occupancy Rate
+### 2.1 Occupancy Rate
 
-Occupancy remained relatively stable throughout the five-year period, ranging from 56.38% to 56.45%.
+Occupancy rate measures the utilisation of available room capacity.
 
-This indicates consistent room utilisation across the simulated hotel portfolio.
+The annual occupancy rates remained relatively stable throughout the five-year period:
 
-Possible business factors influencing occupancy include seasonal tourism, public holidays, local festivals, business travel and conferences.
+| Year | Occupancy Rate |
+|---|---:|
+| 2022 | 56.43% |
+| 2023 | 56.45% |
+| 2024 | 56.38% |
+| 2025 | 56.42% |
+| 2026 | 56.44% |
 
-### Average Daily Rate (ADR)
+The occupancy rate remained close to 56% across all five years, indicating consistent room utilisation across the simulated hotel portfolio.
+
+Although the annual figures show limited variation, monthly performance reveals more noticeable seasonal differences.
+
+Tourism demand, holidays, local festivals and business travel are potential factors influencing occupancy across different locations and periods.
+
+### 2.2 Average Daily Rate (ADR)
+
+ADR measures the average room revenue earned per occupied room night.
+
+| Year | ADR |
+|---|---:|
+| 2022 | ₹4,701.81 |
+| 2023 | ₹4,704.08 |
+| 2024 | ₹4,712.96 |
+| 2025 | ₹4,705.41 |
+| 2026 | ₹4,714.14 |
 
 ADR increased slightly from ₹4,701.81 in 2022 to ₹4,714.14 in 2026.
 
-This suggests a small increase in average room pricing over the simulated period.
+This indicates relatively stable room pricing across the simulated period, with minor annual fluctuations.
 
-Possible influencing factors include peak-season pricing, room demand, hotel category and pricing strategies.
+Monthly variations are more noticeable because room prices were adjusted according to simulated seasonal demand. Peak-demand periods were assigned higher room prices, while lower-demand periods included discounted pricing.
 
-### Revenue Per Available Room (RevPAR)
+### 2.3 Revenue Per Available Room (RevPAR)
 
-RevPAR increased from ₹2,653.35 in 2022 to ₹2,660.77 in 2026.
+RevPAR measures the room revenue generated per available room night.
 
-The gradual increase is consistent with the slight improvement in ADR while occupancy remained stable.
+| Year | RevPAR |
+|---|---:|
+| 2022 | ₹2,653.35 |
+| 2023 | ₹2,655.51 |
+| 2024 | ₹2,657.35 |
+| 2025 | ₹2,654.96 |
+| 2026 | ₹2,660.77 |
 
-This indicates that room revenue per available room improved marginally over the five years.
+RevPAR increased slightly from ₹2,653.35 in 2022 to ₹2,660.77 in 2026.
+
+The gradual improvement is consistent with relatively stable occupancy and a small increase in ADR.
+
+This indicates that the simulated hotel portfolio maintained consistent room revenue performance over the five-year period.
 
 ## 3. Guest Satisfaction Analysis
 
+Guest satisfaction measures the average rating provided by guests through feedback records, using a scale of 1 to 5.
+
+| Year | Average Satisfaction Score |
+|---|---:|
+| 2022 | 4.04 |
+| 2023 | 4.07 |
+| 2024 | 4.01 |
+| 2025 | 4.01 |
+| 2026 | 4.04 |
+
 Guest satisfaction remained positive throughout the analysis period.
 
-- 2022: 4.04
-- 2023: 4.07
-- 2024: 4.01
-- 2025: 4.01
-- 2026: 4.04
+The highest annual satisfaction score was recorded in 2023 at 4.07. A slight decline occurred during 2024 and 2025, followed by a recovery to 4.04 in 2026.
 
-The highest satisfaction score was recorded in 2023.
+Possible operational factors influencing guest satisfaction include service quality, staff availability, room cleanliness, waiting times and overall guest experience.
 
-The slight decline during 2024 and 2025 could potentially be associated with increased guest volumes, service delays, staffing availability or operational challenges.
+The synthetic data also incorporates small rating reductions during selected peak-demand months to represent potential service pressure.
 
-The recovery in 2026 suggests an improvement in the simulated guest experience.
-
-Hotels should continue monitoring service quality, staff responsiveness, room cleanliness and guest feedback.
+Hotels should continue monitoring guest feedback and maintaining service quality, particularly during periods of higher occupancy.
 
 ## 4. Employee Turnover Analysis
 
-Employee turnover showed variation over the five-year period.
+Employee turnover measures employee exits relative to the average employee count.
 
-- 2022: 6.20%
-- 2023: 5.34%
-- 2024: 5.14%
-- 2025: 5.85%
-- 2026: 9.28%
+| Year | Employee Exits | Turnover Rate |
+|---|---:|---:|
+| 2022 | 2 | 6.20% |
+| 2023 | 5 | 5.34% |
+| 2024 | 8 | 5.14% |
+| 2025 | 12 | 5.85% |
+| 2026 | 23 | 9.28% |
 
-Turnover decreased between 2022 and 2024, followed by an increase in 2025 and 2026.
+Employee turnover decreased between 2022 and 2024, followed by an increase in 2025 and 2026.
 
-The highest turnover rate occurred in 2026, at 9.28%, with 23 employee exits.
+The highest turnover rate occurred in 2026 at 9.28%, with 23 employee exits.
 
-Possible contributing factors include seasonal employment patterns, increased workload during peak periods, employee dissatisfaction and staffing changes.
+This increase indicates a potential employee retention concern within the simulated workforce.
 
-Hotels should monitor employee retention, workload distribution, training and workplace satisfaction.
+Possible business factors influencing employee turnover in the hospitality industry include workload, employee satisfaction, seasonal employment requirements, workplace conditions and career development opportunities.
 
-**Important limitation:** All employees in the generated dataset have joining dates within 2022–2026. There is no opening employee workforce carried forward from before 2022. Therefore, turnover figures represent the simulated employment history and should not be treated as actual industry benchmarks.
+Hotels should monitor employee retention, workload distribution, training and employee engagement.
 
-## 5. Seasonal Variation and Business Interpretation
+**Important limitation:**
 
-The synthetic dataset incorporates qualitative seasonal assumptions based on the supplied project guidance.
+All employees in the generated dataset have joining dates within 2022–2026. There is no opening employee workforce carried forward from before 2022.
 
-The assumptions include:
+Therefore, the calculated turnover figures represent the simulated employment history and should not be interpreted as actual industry benchmarks.
 
-- Occupancy may increase during holidays, festivals, tourist seasons and major local events.
-- ADR may increase during periods of high demand and decrease during off-peak periods.
-- RevPAR may improve when higher room rates and occupancy occur together.
-- Guest satisfaction may decrease during peak periods due to crowding, waiting times or increased service pressure.
-- Employee turnover may increase during periods of seasonal employment demand or workload pressure.
+Additionally, employee exits were not explicitly weighted according to seasonal demand. Consequently, seasonal employee turnover patterns cannot be established from this dataset.
 
-These are the intended business scenarios used in synthetic data generation.
+## 5. Seasonal Variation Analysis
 
-The annual summaries in this report do not independently establish monthly seasonal patterns. Monthly aggregate data should be examined to identify and validate those patterns.
+Seasonal variations were incorporated into the synthetic dataset based on the qualitative guidance provided in the project requirements.
+
+The five-year monthly aggregate data was grouped into four seasons:
+
+- Winter: December, January and February
+- Summer: March, April, May and June
+- Monsoon: July, August and September
+- Post-Monsoon: October and November
+
+The following results were obtained from the MySQL aggregate tables.
+
+### 5.1 Seasonal Performance Summary
+
+| Season | Occupancy Rate | ADR (₹) | RevPAR (₹) | Guest Satisfaction |
+|---|---:|---:|---:|---:|
+| Winter | 60.29% | 5,028.65 | 3,031.60 | 4.00 |
+| Summer | 56.33% | 5,029.04 | 2,832.71 | 3.93 |
+| Monsoon | 51.62% | 3,927.83 | 2,027.69 | 4.14 |
+| Post-Monsoon | 58.16% | 4,636.67 | 2,696.76 | 4.13 |
+
+These results represent pooled performance across all 10 hotels and the five-year period, rather than individual hotel or year-level results.
+
+### 5.2 Seasonal Business Interpretations
+
+**Winter**
+
+Winter recorded the highest occupancy rate at 60.29% and the highest RevPAR at ₹3,031.60.
+
+ADR was also relatively high at ₹5,028.65.
+
+This reflects the simulated higher tourism demand assumptions for destinations such as Goa and Jaipur during their peak travel months.
+
+The combination of higher occupancy and room pricing contributed to stronger revenue per available room.
+
+**Summer**
+
+Summer recorded the highest ADR at ₹5,029.04, closely followed by Winter at ₹5,028.65.
+
+However, occupancy was lower than Winter at 56.33%, resulting in a RevPAR of ₹2,832.71.
+
+Guest satisfaction was the lowest among the four seasons at 3.93.
+
+This is consistent with the synthetic modelling assumption that higher room pricing and peak-season service pressure may influence the guest experience.
+
+**Monsoon**
+
+Monsoon recorded the lowest occupancy rate at 51.62%, the lowest ADR at ₹3,927.83 and the lowest RevPAR at ₹2,027.69.
+
+These results reflect the simulated lower-demand and discounted-pricing assumptions during the monsoon months.
+
+Guest satisfaction was comparatively high at 4.14, the highest among the four seasons.
+
+This may be consistent with the assumption that lower guest volumes can reduce crowding and waiting times.
+
+**Post-Monsoon**
+
+Post-Monsoon recorded an occupancy rate of 58.16% and a RevPAR of ₹2,696.76.
+
+This indicates a recovery in occupancy and room revenue compared with the Monsoon period.
+
+Guest satisfaction remained relatively high at 4.13.
+
+The results demonstrate how seasonal demand and pricing assumptions can influence hotel performance.
+
+### 5.3 Overall Seasonal Findings
+
+The seasonal analysis highlights the following observations:
+
+1. Winter generated the highest occupancy and RevPAR.
+2. Summer recorded the highest ADR, reflecting the simulated peak-season pricing assumptions.
+3. Monsoon recorded the lowest occupancy, ADR and RevPAR.
+4. Guest satisfaction was lowest during Summer and highest during Monsoon.
+5. Post-Monsoon showed a recovery in occupancy and revenue compared with Monsoon.
+
+These findings demonstrate the relationship between seasonal demand, room pricing, revenue generation and guest satisfaction in the synthetic dataset.
 
 ## 6. Key Business Recommendations
 
-1. **Improve occupancy:** Use targeted promotions and packages during periods of lower demand.
+Based on the annual and seasonal analysis, the following recommendations can be considered:
 
-2. **Optimise room pricing:** Adjust room rates according to seasonal demand while maintaining competitive pricing.
+**1. Improve occupancy**
 
-3. **Improve revenue performance:** Monitor ADR and RevPAR together to understand the relationship between pricing and room utilisation.
+Use targeted promotions, seasonal packages and special offers during lower-demand periods to improve room utilisation.
 
-4. **Maintain guest satisfaction:** Monitor guest feedback and improve service quality, especially during peak periods.
+**2. Optimise room pricing**
 
-5. **Reduce employee turnover:** Strengthen employee engagement, training, workload management and retention practices.
+Adjust room rates according to seasonal demand. Maintain competitive pricing during low-demand periods while using appropriate peak-season pricing strategies.
 
-6. **Monitor hotel-level performance:** Compare hotels individually to identify locations that require operational improvements.
+**3. Improve revenue performance**
+
+Monitor ADR and RevPAR together to understand the relationship between room pricing and occupancy. Focus on improving revenue without negatively affecting room utilisation.
+
+**4. Maintain guest satisfaction**
+
+Monitor guest feedback and improve service quality, staff responsiveness and operational efficiency, particularly during periods of higher guest demand.
+
+**5. Reduce employee turnover**
+
+Strengthen employee engagement, training, workload management and retention practices to support workforce stability.
+
+**6. Monitor hotel-level performance**
+
+Compare individual hotels and locations to identify differences in occupancy, pricing, revenue, guest satisfaction and employee turnover. Use these comparisons to identify hotels requiring operational improvements.
 
 ## 7. Data Limitations and Assumptions
 
+The following limitations should be considered when interpreting the results:
+
 - The dataset is synthetically generated and does not represent actual hotel operations.
 - The analysis covers 10 hotels across five Indian cities.
-- The five-year period is 2022–2026.
+- The five-year analysis period is 2022–2026.
 - The complete year 2026 is simulated, including dates after the actual data-generation date.
-- Seasonal patterns are based on qualitative project guidance rather than additional numerical trend files.
-- Employee joining and exit events are simulated.
-- Employee turnover calculations are affected by the absence of an opening workforce before 2022.
-- Annual aggregates may hide variations occurring at the monthly or hotel level.
+- Seasonal patterns are based on qualitative project guidance and modelling assumptions rather than additional numerical trend files.
+- Events, conferences and festivals were not explicitly modelled as separate demand drivers.
+- Length of stay was not separately modelled as a seasonal factor.
+- Employee joining and exit events are simulated, and employee exits are not explicitly weighted by season.
+- There is no opening employee workforce before 2022, which affects the interpretation of employee turnover.
+- Seasonal results are pooled across hotels and years, which may hide individual hotel and year-level differences.
+- Annual aggregates may hide variations occurring at the monthly level.
 
-These limitations should be considered when interpreting the results.
+The findings should therefore be interpreted as insights from a synthetic analytical exercise rather than verified real-world hospitality performance.
 
 ## 8. Conclusion
 
-The analysis demonstrates how dimensional modelling, SQL aggregation and Python-based dashboards can be used to monitor hotel business performance.
+This project demonstrates how dimensional modelling, Python-based data generation, MySQL aggregation and interactive dashboards can be used to analyse hospitality business performance.
 
-Occupancy, ADR and RevPAR remained relatively stable, while guest satisfaction showed minor fluctuations. Employee turnover increased noticeably in 2026 and may require further investigation.
+The annual analysis indicates relatively stable occupancy, ADR and RevPAR across the five-year period. Guest satisfaction remained positive, with minor annual fluctuations, while employee turnover increased noticeably in 2026.
 
-The project provides a structured approach to analysing hospitality KPIs and identifying areas for operational improvement.
+The seasonal analysis provides further insight into the relationship between demand, room pricing, revenue and guest satisfaction. Winter recorded the strongest occupancy and RevPAR, while Monsoon showed lower occupancy and room revenue. Summer recorded the highest ADR but the lowest guest satisfaction.
 
-The Streamlit dashboard enables users to explore performance through interactive city, hotel, year and month filters.
+The project provides a structured approach to monitoring hospitality KPIs, understanding seasonal variations and identifying potential areas for operational improvement.
+
+The Streamlit dashboard enables users to explore hotel performance through interactive city, hotel, year and month filters, supporting comparisons across locations and time periods.
